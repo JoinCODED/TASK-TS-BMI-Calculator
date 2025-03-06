@@ -69,7 +69,7 @@ if(BMI >= 19 && BMI<=24 )
   }
 }
 
-if(BMI >= 20 && BMI<=25 )
+if(BMI>= 20 && BMI<=25 )
   {
     if (age>=25 && age<= 34){
       BMIState = "healthy";
@@ -78,7 +78,7 @@ if(BMI >= 20 && BMI<=25 )
 
   if(BMI >= 21 && BMI<=26 )
     {
-      if (age>=25 && age<= 44){
+      if (age>=35 && age<= 44){
         BMIState = "healthy";
       }
     }
@@ -103,6 +103,7 @@ if(BMI >= 20 && BMI<=25 )
               BMIState = "healthy";
             }
           }
+        
   // Stop making changes here!
   return BMIState;
 }
