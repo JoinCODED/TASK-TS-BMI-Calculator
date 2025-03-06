@@ -7,7 +7,8 @@
  */
 function calculateBMI(weight: number, height: number): number {
   // Write your code here 👇🏼
-  const BMI = 0;
+  const heightsquare:number = (height/100)*(height/100)
+  const BMI = weight/heightsquare;
   // Stop making changes here!
   return BMI;
 }
@@ -25,7 +26,12 @@ function getBMIState(BMI: number): BMIStatus {
   // Don't change this variable
   let BMIState: BMIStatus = "obese";
   // Write your code here 👇🏼
-
+  if(BMI < 18.5)
+    BMIState = "underweight"
+  else if(BMI < 25)
+    BMIState = "healthy"
+  else if(BMI < 30)
+    BMIState = "overweight"
   // Stop making changes here!
   return BMIState;
 }
@@ -44,7 +50,14 @@ function getBMIStateByAge(BMI: number, age: number): HealthStatus {
   // Don't change this variable
   let BMIState: HealthStatus = "not healthy";
   // Write your code here 👇🏼
-
+  if(age>=19){
+  let minBMI:number = Math.floor((age+5)/10)+17
+  if (age >= 65)
+    minBMI = 24
+  let maxBMI:number = minBMI+5
+  if(minBMI<= BMI && BMI <= maxBMI)
+    BMIState = "healthy"
+}
   // Stop making changes here!
   return BMIState;
 }
